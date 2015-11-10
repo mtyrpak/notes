@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+	crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+	integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+<title>Notes Application</title>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+	integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+	crossorigin="anonymous"></script>
+	
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-resource.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.8.1/angular-translate.min.js"></script>
+
+<link rel="stylesheet" href="css/notes.css">
+<script src="js/notes.js"></script>
+<script src="js/templates.js"></script>
+
+</head>
+
+<body ng-app="notesApp">
+
+	<div class="container" >
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" ui-sref="notes" translate>TITLE</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a ui-sref="create"><span class="glyphicon glyphicon-plus"></span> <span translate>CREATE_NOTE</span></a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" style="margin-right:0px;">
+				<li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span translate>BUTTON_LANG</span>
+		          <span class="caret"></span></a>
+		          <ul class="dropdown-menu" ng-controller="i18nController">
+		            <li><a href="#" ng-click="changeLanguage('sk')" ng-class="getLangClass('sk')" translate>BUTTON_LANG_SK</a></li>
+		            <li><a href="#" ng-click="changeLanguage('en')" ng-class="getLangClass('en')" translate>BUTTON_LANG_EN</a></li>
+		          </ul>
+		        </li>
+		    </ul>
+		</nav>
+	</div>
+
+	<div class="container">
+		<!-- content goes here -->
+		<div ui-view=""></div>
+		
+		<div ng-controller="messagesController">
+			<div id="messages">
+			</div>
+			
+			<div loading-spinner></div>
+		</div>
+	</div>
+<!--<div>
+<div class="modal-backdrop fade in"></div>
+<div style="z-index: 1100; position: fixed; padding: 0px; margin: 0px; width: 0%; top: 40%; left: 48%; text-align: center; color: rgb(0, 0, 0); border: none; cursor: wait;">
+    <div><img src="../img/loaderbg.png" 
+	style="padding: 0; position: absolute; margin-left: -5px; margin-top: -5px;">
+	<img src="../img/loading-big.gif" alt="Processing…" style="padding-top: 0; position: absolute;"> </img></div>
+</div>
+</div>-->
+</body>
+</html>

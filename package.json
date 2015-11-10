@@ -1,0 +1,33 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Notes Angular JS Application",
+  "main": "index.html",
+  "scripts": {
+    "test": "protractor test/conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtyrpak/notes/"
+  },
+  "keywords": [
+    "AngularJS"
+  ],
+  "author": "Maros Tyrpak",
+  "license": "ISC",
+  "devDependencies": {
+    "connect": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-html2js": "^0.2.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-protractor": "^1.0.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "jshint-stylish": "^2.0.1",
+    "protractor": "^2.5.1",
+    "serve-static": "^1.10.0"
+  }
+}

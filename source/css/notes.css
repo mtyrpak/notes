@@ -1,0 +1,13 @@
+.controls {
+	float: right;
+}
+
+.controls:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.dropdown-menu > li > a.active-language {
+	font-weight: bold;
+}

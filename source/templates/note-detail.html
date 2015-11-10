@@ -1,0 +1,31 @@
+<div class="well" ng-show="hasNote">
+	<div ng-hide="edit">
+		<div class="row">
+			<div class="col-sm-1" translate>ID_LABEL</div>
+	  		<div class="col-sm-11">{{note.id}}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1" translate>TEXT_LABEL</div>
+	  		<div class="col-sm-11">{{note.title}}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1" translate>CREATED_LABEL</div>
+	  		<div class="col-sm-11">10.11.2015 22:31</div>
+		</div>
+		<p class="text-primary"></p>
+		<a ng-click="onEdit()" class="btn btn-primary">
+			<span class="glyphicon glyphicon-pencil"></span> <span translate>EDIT</span></a></a>
+		<a ng-click="onDelete(note.id)" ng-show="note.id" class="btn btn-danger">
+			<span class="glyphicon glyphicon-remove"></span> <span translate>DELETE</span></a>
+		</a> 
+		<a ui-sref="notes" class="btn btn-primary" translate>CLOSE</a>
+	</div>
+	
+	<form role="form" name="noteForm" ng-submit="noteForm.$valid && onSave()" ng-show="edit">
+		<div class="form-group">
+			<label for="text" translate>TEXT_LABEL</label> <textarea type="text" class="form-control" id="text" ng-model="note.title" required>{{note.title}}</textarea>
+		</div>
+		<button type="submit" class="btn btn-primary" translate>SAVE</button>
+		<a ui-sref="notes" class="btn btn-primary" translate>CLOSE</a>	
+	</form>
+</div>
