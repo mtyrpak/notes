@@ -1,20 +1,23 @@
 ### Notes Application
 
-To prepare environment for this application install NodeJS (tested with version 5.0). Go to project directory and run.
+To prepare environment for this application install NodeJS (tested with version 5.0). Go to project directory and run following command to install project dependencies
 ```
 npm install
 ```
-To start HTTP server use command. It will start local web server on port 9000.
-```
-node server.js
-```
-Build of application is performed using gulp.
+Build applicaiton using gulp.
 ```
 gulp build
 ```
-Before tests are started start webdriver manager and then start tests use following command:
+To start HTTP server use following command. It will start local web server on port 9000.
 ```
-webdriver-manager
+node server.js
+```
+Before tests are started you must start webdriver manager 
+```
+webdriver-manager start
+```
+and then you can start tests using following command:
+```
 gulp test
 ```
 or 
