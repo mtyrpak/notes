@@ -15,7 +15,7 @@ var gulp  = require('gulp'),
 
 gulp.task('default', ['watch']);
 
-gulp.task('build', ['copyHtml', 'copyImages', 'jshint', 'build-css', 'build-js', 'html2js', 'test']);
+gulp.task('build', ['copyHtml', 'copyImages', 'jshint', 'build-css', 'build-js', 'html2js']);
 
 gulp.task('copyHtml', function() {
   // copy any html files in source/ to public/
